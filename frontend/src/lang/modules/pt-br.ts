@@ -1283,8 +1283,6 @@ const message = {
                 'Alterar o modelo de verificação marca o serviço como não verificado sem chamar o modelo.',
             reverify: 'Verificar novamente',
             verifyConfirm: 'O modelo será verificado com as configurações abaixo. Continuar?',
-            apiKeyHelper:
-                'Se o serviço não exigir uma API Key, insira qualquer valor de preenchimento não vazio, como unused.',
             verifyOnChangeHelper:
                 'Ao ativar ou alterar a conexão ou o modelo de verificação, a API é verificada com uma mensagem mínima.',
             verifyImageOnChangeHelper:

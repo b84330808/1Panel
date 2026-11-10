@@ -1275,8 +1275,6 @@ const message = {
                 'Changing the verification model marks the service as unverified without calling the model.',
             reverify: 'Verify again',
             verifyConfirm: 'The model will be verified using the settings below. Continue?',
-            apiKeyHelper:
-                'If the service does not require an API Key, enter any non-empty placeholder, such as unused.',
             verifyOnChangeHelper:
                 'When enabled or connection settings or the verification model change, verify the API with a minimal message.',
             verifyImageOnChangeHelper:

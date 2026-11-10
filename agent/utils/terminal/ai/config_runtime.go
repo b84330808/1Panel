@@ -68,9 +68,6 @@ func ResolveGeneratorConfig(accountID uint) (GeneratorConfig, time.Duration, err
 	if apiKey == "" {
 		apiKey = lookupProviderAPIKey(provider)
 	}
-	if apiKey == "" && provider != "ollama" && provider != "llmman" {
-		return GeneratorConfig{}, 0, fmt.Errorf("agent account api key is required")
-	}
 	return GeneratorConfig{
 		Provider:  provider,
 		BaseURL:   baseURL,

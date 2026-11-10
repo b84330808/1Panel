@@ -1284,7 +1284,6 @@ const message = {
                 'Doğrulama modeli değiştirildiğinde hizmet, model çağrılmadan doğrulanmamış olarak işaretlenir.',
             reverify: 'Yeniden doğrula',
             verifyConfirm: 'Model aşağıdaki ayarlarla doğrulanacak. Devam edilsin mi?',
-            apiKeyHelper: 'Hizmet API Key gerektirmiyorsa unused gibi boş olmayan herhangi bir yer tutucu değer girin.',
             verifyOnChangeHelper:
                 'Etkinleştirildiğinde veya bağlantı ayarları ya da doğrulama modeli değiştiğinde API kısa bir mesajla doğrulanır.',
             verifyImageOnChangeHelper:

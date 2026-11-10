@@ -58,7 +58,9 @@ func BuildVerifyRequest(provider, apiType, authMode, baseURL, apiKey, model stri
 
 	if provider == "gemini" {
 		request.URL = baseURL + "/v1beta/models/" + strings.TrimSpace(model) + ":generateContent"
-		headers["x-goog-api-key"] = apiKey
+		if strings.TrimSpace(apiKey) != "" {
+			headers["x-goog-api-key"] = apiKey
+		}
 		request.Body = mustJSON(map[string]interface{}{
 			"contents": []map[string]interface{}{{"parts": []map[string]string{{"text": "test"}}}},
 		})
@@ -115,7 +117,7 @@ func BuildVerifyRequest(provider, apiType, authMode, baseURL, apiKey, model stri
 		request.Body = mustJSON(map[string]interface{}{"model": model, "input": "test", "max_output_tokens": defaultVerifyMaxTokens, "stream": false})
 	default:
 		request.URL = baseURL + "/chat/completions"
-		if (provider != "ollama" && provider != "llmman") || strings.TrimSpace(apiKey) != "" {
+		if strings.TrimSpace(apiKey) != "" {
 			headers["Authorization"] = "Bearer " + apiKey
 		}
 		body := map[string]interface{}{
@@ -126,8 +128,9 @@ func BuildVerifyRequest(provider, apiType, authMode, baseURL, apiKey, model stri
 		}
 		request.Body = mustJSON(body)
 	}
-	if strings.TrimSpace(apiKey) == "" && (provider == "vllm" || provider == "ollama" || provider == "llmman") {
+	if strings.TrimSpace(apiKey) == "" {
 		delete(headers, "Authorization")
+		delete(headers, "x-api-key")
 	}
 	return request
 }

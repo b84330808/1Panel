@@ -319,7 +319,7 @@ type AgentAccountVerifyModelUpdateReq struct {
 type AgentAccountModelDiscoverReq struct {
 	Provider string `json:"provider" validate:"required"`
 	BaseURL  string `json:"baseURL" validate:"required"`
-	APIKey   string `json:"apiKey" validate:"required"`
+	APIKey   string `json:"apiKey"`
 	APIType  string `json:"apiType" validate:"required"`
 }
 
@@ -343,7 +343,7 @@ type AgentAccountModelDeleteReq struct {
 type AgentAccountCreateReq struct {
 	Provider             string              `json:"provider" validate:"required"`
 	Name                 string              `json:"name" validate:"required"`
-	APIKey               string              `json:"apiKey" validate:"required"`
+	APIKey               string              `json:"apiKey"`
 	RememberAPIKey       bool                `json:"rememberApiKey"`
 	BaseURL              string              `json:"baseURL"`
 	Models               []AgentAccountModel `json:"models"`
@@ -357,7 +357,7 @@ type AgentAccountCreateReq struct {
 type AgentAccountUpdateReq struct {
 	ID                   uint                `json:"id" validate:"required"`
 	Name                 string              `json:"name" validate:"required"`
-	APIKey               string              `json:"apiKey" validate:"required"`
+	APIKey               string              `json:"apiKey"`
 	RememberAPIKey       bool                `json:"rememberApiKey"`
 	BaseURL              string              `json:"baseURL"`
 	APIType              string              `json:"apiType" validate:"required"`
@@ -372,7 +372,7 @@ type AgentAccountUpdateReq struct {
 type AgentAccountVerifyReq struct {
 	ID       uint   `json:"id"`
 	Provider string `json:"provider" validate:"required_without=ID"`
-	APIKey   string `json:"apiKey" validate:"required_without=ID"`
+	APIKey   string `json:"apiKey"`
 	BaseURL  string `json:"baseURL"`
 	APIType  string `json:"apiType" validate:"required_without=ID"`
 	AuthMode string `json:"authMode"`

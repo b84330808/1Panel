@@ -1259,7 +1259,6 @@ const message = {
             verifyModelChangeHelper: '検証モデルを変更すると、モデルを呼び出さずにサービスが未検証になります。',
             reverify: '再検証',
             verifyConfirm: '以下の設定でモデルを検証します。続行しますか？',
-            apiKeyHelper: 'サービスに API Key が不要な場合は、unused などの空でない任意の値を入力してください。',
             verifyOnChangeHelper:
                 '有効化時、または接続設定・検証モデルの変更時に、最小限のメッセージで API を検証します。',
             verifyImageOnChangeHelper:

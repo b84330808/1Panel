@@ -1246,7 +1246,6 @@ const message = {
             verifyModelChangeHelper: '검증 모델을 변경하면 모델을 호출하지 않고 서비스가 미검증 상태로 표시됩니다.',
             reverify: '다시 검증',
             verifyConfirm: '아래 설정으로 모델을 검증합니다. 계속하시겠습니까?',
-            apiKeyHelper: '서비스에 API Key가 필요하지 않으면 unused와 같은 비어 있지 않은 임의의 값을 입력하세요.',
             verifyOnChangeHelper: '활성화하거나 연결 설정 또는 검증 모델을 변경하면 최소 메시지로 API를 검증합니다.',
             verifyImageOnChangeHelper:
                 '활성화하거나 연결 설정 또는 검증 모델을 변경하면 최소 이미지를 생성하여 API를 검증하며, 비용이 발생할 수 있습니다.',

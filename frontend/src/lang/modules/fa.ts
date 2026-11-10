@@ -1256,7 +1256,6 @@ const message = {
             verifyModelChangeHelper: 'با تغییر مدل تأیید، سرویس بدون فراخوانی مدل به حالت تأییدنشده تغییر می‌کند.',
             reverify: 'بررسی مجدد',
             verifyConfirm: 'مدل با تنظیمات زیر بررسی می‌شود. ادامه می‌دهید؟',
-            apiKeyHelper: 'اگر سرویس به API Key نیاز ندارد، یک مقدار جایگزین غیرخالی مانند unused وارد کنید.',
             verifyOnChangeHelper:
                 'هنگام فعال‌سازی یا تغییر تنظیمات اتصال یا مدل بررسی، API با یک پیام حداقلی بررسی می‌شود.',
             verifyImageOnChangeHelper:

@@ -92,9 +92,6 @@ func NewClient(cfg ClientConfig) (Client, error) {
 	if strings.TrimSpace(cfg.Model) == "" {
 		return nil, fmt.Errorf("model is required")
 	}
-	if strings.TrimSpace(cfg.APIKey) == "" && providerKey != "ollama" && providerKey != "llmman" {
-		return nil, fmt.Errorf("api key is required")
-	}
 	baseURL := normalizeBaseURL(providerKey, cfg.BaseURL)
 	if baseURL == "" {
 		return nil, fmt.Errorf("base url is required")
@@ -153,7 +150,9 @@ func (c *terminalAIClient) chatCompletionOpenAI(ctx context.Context, req ChatCom
 	if err != nil {
 		return nil, fmt.Errorf("create request: %w", err)
 	}
-	httpReq.Header.Set("Authorization", "Bearer "+strings.TrimSpace(c.config.APIKey))
+	if strings.TrimSpace(c.config.APIKey) != "" {
+		httpReq.Header.Set("Authorization", "Bearer "+strings.TrimSpace(c.config.APIKey))
+	}
 	httpReq.Header.Set("Content-Type", "application/json")
 	httpReq.Header.Set("Accept", "application/json")
 	httpReq.Header.Set("User-Agent", defaultUserAgent)
@@ -245,10 +244,12 @@ func (c *terminalAIClient) chatCompletionAnthropic(ctx context.Context, req Chat
 	if err != nil {
 		return nil, fmt.Errorf("create request: %w", err)
 	}
-	if c.config.AuthMode == providercatalog.AuthModeBearer {
-		httpReq.Header.Set("Authorization", "Bearer "+strings.TrimSpace(c.config.APIKey))
-	} else {
-		httpReq.Header.Set("x-api-key", strings.TrimSpace(c.config.APIKey))
+	if strings.TrimSpace(c.config.APIKey) != "" {
+		if c.config.AuthMode == providercatalog.AuthModeBearer {
+			httpReq.Header.Set("Authorization", "Bearer "+strings.TrimSpace(c.config.APIKey))
+		} else {
+			httpReq.Header.Set("x-api-key", strings.TrimSpace(c.config.APIKey))
+		}
 	}
 	httpReq.Header.Set("anthropic-version", "2023-06-01")
 	httpReq.Header.Set("Content-Type", "application/json")
@@ -295,7 +296,9 @@ func (c *terminalAIClient) chatCompletionGemini(ctx context.Context, req ChatCom
 	if err != nil {
 		return nil, fmt.Errorf("create request: %w", err)
 	}
-	httpReq.Header.Set("x-goog-api-key", strings.TrimSpace(c.config.APIKey))
+	if strings.TrimSpace(c.config.APIKey) != "" {
+		httpReq.Header.Set("x-goog-api-key", strings.TrimSpace(c.config.APIKey))
+	}
 	httpReq.Header.Set("Content-Type", "application/json")
 	httpReq.Header.Set("Accept", "application/json")
 	httpReq.Header.Set("User-Agent", defaultUserAgent)

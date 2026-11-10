@@ -38,9 +38,6 @@ func newAIInputInterceptor(shell string, lang string) *aiInputInterceptor {
 		}
 		return nil
 	}
-	if strings.TrimSpace(config.APIKey) == "" && !strings.EqualFold(strings.TrimSpace(config.Provider), "ollama") {
-		return nil
-	}
 	return &aiInputInterceptor{
 		config:       config,
 		timeout:      timeout,

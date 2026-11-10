@@ -111,7 +111,6 @@
                     autocomplete="new-password"
                     show-password
                 />
-                <span class="input-help">{{ $t('aiTools.model.apiKeyHelper') }}</span>
             </el-form-item>
             <el-form-item>
                 <el-checkbox v-model="form.rememberApiKey">{{ $t('terminal.rememberPassword') }}</el-checkbox>
@@ -525,7 +524,6 @@ const baseURLAPITypeMismatchTip = computed(() => {
 const rules = reactive({
     provider: [Rules.requiredSelect],
     name: [Rules.requiredInput],
-    apiKey: [Rules.requiredInput],
     baseURL: [Rules.requiredInput],
     apiType: [Rules.requiredSelect],
 });
@@ -612,7 +610,7 @@ const discoverModels = async () => {
         return;
     }
     try {
-        await formRef.value.validateField(['apiKey', 'baseURL']);
+        await formRef.value.validateField('baseURL');
     } catch {
         return;
     }

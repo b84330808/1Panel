@@ -1187,7 +1187,6 @@ const message = {
             verifyModelChangeHelper: '切換驗證模型後會標記為未驗證，不會自動呼叫模型。',
             reverify: '重新驗證',
             verifyConfirm: '將使用以下設定驗證模型，是否繼續？',
-            apiKeyHelper: '若服務不需要 API Key，可輸入任意非空佔位值，例如 unused。',
             verifyOnChangeHelper: '開啟時或連線參數、驗證模型變更時，傳送最小訊息驗證介面。',
             verifyImageOnChangeHelper: '開啟時或連線參數、驗證模型變更時，產生最小圖片驗證介面，可能產生費用。',
             unverified: '未驗證',

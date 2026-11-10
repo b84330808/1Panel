@@ -1288,8 +1288,6 @@ const message = {
                 'Menukar model pengesahan menandakan perkhidmatan sebagai belum disahkan tanpa memanggil model.',
             reverify: 'Sahkan semula',
             verifyConfirm: 'Model akan disahkan menggunakan tetapan di bawah. Teruskan?',
-            apiKeyHelper:
-                'Jika perkhidmatan tidak memerlukan API Key, masukkan sebarang nilai pemegang tempat yang tidak kosong, seperti unused.',
             verifyOnChangeHelper:
                 'Apabila diaktifkan atau tetapan sambungan atau model pengesahan berubah, API disahkan dengan mesej minimum.',
             verifyImageOnChangeHelper:
